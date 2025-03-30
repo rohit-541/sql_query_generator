@@ -7,7 +7,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "start",
+    "build": "node index.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

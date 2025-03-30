@@ -1,5 +1,5 @@
 
-console.log("Index.js");
+// console.log("Index.js");
 import express from 'express';
 
 import { authenticate } from './Middleware/Auth.js';
@@ -30,7 +30,8 @@ app.post('/explain', authenticate, (req, res) => {
 app.post('/validate', authenticate, (req, res) => {
     const { query } = req.body;
     if (!query) return res.status(400).json({ error: "Query is required" });
-    const isValid = query.toLowerCase().includes("users");
+    const SqlCommand = convertToSQL(query);
+    const isValid = !(SqlCommand === "Invalid query: No valid command found");
     res.json({ valid: isValid, reason: isValid ? "Query structure is correct" : "Query format not recognized" });
 });
 

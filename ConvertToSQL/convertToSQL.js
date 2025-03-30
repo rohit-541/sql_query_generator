@@ -1,3 +1,4 @@
+console.log("CTQ.js");
 
 //Commands
 const tables = ["users","mentors","doubts"];

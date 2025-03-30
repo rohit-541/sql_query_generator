@@ -1,6 +1,9 @@
+
+console.log("Index.js");
 import express from 'express';
-import { convertToSQL } from './ConvertToSQL/convertToSQL.js';
+
 import { authenticate } from './Middleware/Auth.js';
+import { convertToSQL } from './ConvertToSQL/convertToSQL.js';
 
 export const app = express();
 const PORT = 3000;
